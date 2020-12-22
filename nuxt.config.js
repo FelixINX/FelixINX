@@ -19,7 +19,7 @@ export default {
       { rel: 'alternate icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        href: '/fonts/basier_circle/stylesheet.css',
+        href: 'https://fonts.felixinx.me/basier_circle/stylesheet.css',
       },
     ],
   },
