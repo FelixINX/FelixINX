@@ -40,11 +40,13 @@
       <form
         ref="form"
         class="container"
-        name="contact-me"
-        method="POST"
+        name="contactMe"
+        method="post"
         data-netlify="true"
-        @submit="sendForm"
+        data-netlify-honeypot="bot-field"
+        @submit.prevent="sendForm"
       >
+        <input type="hidden" name="form-name" value="contactMe" />
         <label
           for="name"
           class="md:text-lg"
@@ -164,8 +166,7 @@ export default {
     ],
   }),
   methods: {
-    async sendForm(event) {
-      await event.preventDefault()
+    async sendForm() {
       const formData = await new FormData(this.$refs.form)
       await fetch('/', {
         method: 'POST',
