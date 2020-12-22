@@ -18,7 +18,9 @@
     "@nuxt/content": "^1.9.0",
     "@nuxt/typescript-runtime": "^2.0.0",
     "@nuxtjs/pwa": "^3.0.2",
+    "@tailwindcss/forms": "^0.2.1",
     "core-js": "^3.6.5",
+    "fontsource-assistant": "^3.0.10",
     "nuxt": "^2.14.6",
     "nuxt-i18n": "^6.15.1",
     "nuxt-property-decorator": "^2.8.8"
@@ -31,11 +33,14 @@
     "@nuxtjs/eslint-module": "^2.0.0",
     "@nuxtjs/fontawesome": "^1.1.2",
     "@nuxtjs/tailwindcss": "^3.1.0",
+    "autoprefixer": "^9",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.10.0",
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-nuxt": "^1.0.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.1.2"
+    "postcss": "^7",
+    "prettier": "^2.1.2",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   }
 }

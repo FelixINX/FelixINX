@@ -8,12 +8,20 @@ export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'felixinx.me',
+    titleTemplate: '%s | @felixinx',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+      { rel: 'alternate icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: '/fonts/basier_circle/stylesheet.css',
+      },
+    ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -48,13 +56,15 @@ export default {
   content: {},
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
+  build: {
+    transpile: ['fontsource-assistant/latin.css'],
+  },
 
   // Font Awesome module Configuration
   fontawesome: {
     component: 'fa',
     icons: {
-      brands: ['faGithub', 'faInstagram'],
+      brands: ['faGithub', 'faInstagram', 'faLinkedin'],
     },
     proIcons: {
       regular: [
@@ -67,6 +77,13 @@ export default {
         'faTimes',
         'faBars',
         'faConstruction',
+        'faPaperPlane',
+        'faCheck',
+        'faArrowDown',
+        'faNewspaper',
+        'faCode',
+        'faGlobe',
+        'faHome',
       ],
     },
   },

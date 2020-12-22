@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="f" x1="2.803" x2="14.575" y1="-14.013" y2="-2.241" gradientTransform="matrix(1.3547 0 0 1.1262 14.344 33.717)" gradientUnits="userSpaceOnUse" xlink:href="#a"/>
+    <linearGradient id="e" x1="16.54" x2="31.082" y1="19.67" y2="34.212" gradientTransform="scale(1.0968 .91177)" gradientUnits="userSpaceOnUse" xlink:href="#a"/>
+    <clipPath id="b">
+      <path d="M0 0h52v52H0z"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#b)" transform="translate(0 -4)">
+    <linearGradient id="c" x1=".854" x2=".146" y1=".146" y2=".854" gradientTransform="matrix(48 0 0 48 0 4)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#70b68e"/>
+      <stop offset="1" stop-color="#2d8754"/>
+    </linearGradient>
+    <circle cx="24" cy="28" r="24" fill="url(#c)" vector-effect="non-scaling-stroke"/>
+    <circle cx="24" cy="28" r="18" fill="#fff" vector-effect="non-scaling-stroke"/>
+    <g clip-path="url(#d)" transform="matrix(.92 0 0 .92 -.026 5.401)">
+      <g fill="url(#f)" stroke-width="1.235" aria-label="fd">
+        <path d="M17.086 33.717h3.804v-9.709h3.063v-3.211H20.89v-.667c0-1.235.717-1.68 1.952-1.68.37 0 .815.05 1.235.124v-3.212a7.012 7.012 0 00-1.58-.173c-3.015 0-5.411 1.779-5.411 4.941v.667h-2.248v3.211h2.248zM30.055 33.939c1.828 0 2.816-.716 3.434-1.458h.099l.395 1.236h3.409V15.436h-3.804v6.595h-.1c-.617-.74-1.605-1.457-3.433-1.457-3.26 0-5.237 2.816-5.237 6.67 0 3.878 1.976 6.695 5.237 6.695zm1.161-3.335c-1.877 0-2.544-1.556-2.544-3.36 0-1.803.617-3.335 2.544-3.335s2.545 1.532 2.545 3.335c0 1.804-.667 3.36-2.545 3.36z"/>
+      </g>
+      <defs>
+        <linearGradient id="a" x1=".146" x2=".854" y1=".146" y2=".854">
+          <stop offset="0" stop-color="#D65108"/>
+          <stop offset="1" stop-color="#EFA00B"/>
+        </linearGradient>
+      </defs>
+    </g>
+    <defs>
+      <clipPath id="d">
+        <path d="M0 0h26v27.236H0z" transform="translate(13 12.382)"/>
+      </clipPath>
+    </defs>
+  </g>
+</svg>
