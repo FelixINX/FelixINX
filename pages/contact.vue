@@ -1,12 +1,9 @@
 <template>
   <div>
-    <div class="h-56 xl:h-96 bg-image-via bg-cover bg-center relative">
-      <div
-        class="absolute right-4 bottom-4 bg-yellow-300 bg-opacity-90 p-2 rounded font-semibold text-yellow-900 text-sm"
-      >
-        {{ $t('contact.captionVancouver') }}
-      </div>
-    </div>
+    <div
+      class="h-56 xl:h-96 bg-cover bg-center"
+      lazy-background="/img/background-via.jpg"
+    ></div>
     <div class="bg-yellow-500 py-4 md:py-8 space-y-4">
       <h1 class="text-3xl md:text-6xl container font-bold">
         {{ $t('contact.heading') }}
@@ -20,10 +17,15 @@
           target="_blank"
           class="inline-flex items-center rounded p-2 bg-gradient-to-tr from-yellow-400 to-yellow-300 group transition-all w-full md:w-auto"
         >
-          <div class="rounded-full w-10 h-10 bg-black text-center">
-            <fa :icon="['fab', link.icon]" class="text-2xl text-white my-2" />
+          <div
+            class="rounded-full w-8 md:w-10 h-8 md:h-10 bg-black text-center"
+          >
+            <fa
+              :icon="['fab', link.icon]"
+              class="text-lg md:text-2xl text-white my-1.5 md:my-2"
+            />
           </div>
-          <span class="ml-2 flex-grow text-lg">
+          <span class="ml-2 flex-grow text-base md:text-lg">
             {{ link.name }}<b>{{ link.username }}</b>
           </span>
           <fa
@@ -98,7 +100,7 @@
           class="text-white font-medium py-2 px-4 transition-colors"
           :class="{
             'bg-yellow-400 text-yellow-200': formSent,
-            'bg-yellow-500 hover:bg-yellow-700': !formSent,
+            'bg-yellow-500 hover:bg-yellow-700 focus:bg-yellow-700': !formSent,
           }"
           :disabled="formSent"
         >
@@ -129,10 +131,20 @@
       </form>
     </div>
     <Footer>
-      <Connection href="#" icon="folders" icon-class="bg-green-500">
+      <Connection
+        to="/"
+        icon="folders"
+        icon-class="bg-green-500"
+        hover-class="bg-blue-600"
+      >
         {{ $t('contact.connectionProjects') }}
       </Connection>
-      <Connection href="#" icon="newspaper" icon-class="bg-orange-500">
+      <Connection
+        to="/blog"
+        icon="newspaper"
+        icon-class="bg-orange-500"
+        hover-class="bg-blue-600"
+      >
         {{ $t('home.connectionBlog') }}
       </Connection>
     </Footer>
@@ -180,14 +192,17 @@ export default {
         .catch((error) => console.log(error))
     },
   },
-  head: {
-    title: 'Contact',
+  head() {
+    return {
+      title: this.$t('contact.heading'),
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.$t('contact.metaDescription'),
+        },
+      ],
+    }
   },
 }
 </script>
-
-<style>
-.bg-image-via {
-  background-image: url('/img/background-via.jpg');
-}
-</style>

@@ -1,4 +1,5 @@
 const plugin = require('tailwindcss/plugin')
+// const colors = require('tailwindcss/colors')
 
 module.exports = {
   theme: {
@@ -8,16 +9,16 @@ module.exports = {
       white: '#ffffff',
       black: '#000000',
       blue: {
-        50: '#F3F4F5',
-        100: '#E7E9EC',
-        200: '#C3C9CE',
-        300: '#9FA9B1',
-        400: '#566877',
-        500: '#0E273C',
-        600: '#0D2336',
-        700: '#081724',
-        800: '#06121B',
-        900: '#040C12',
+        50: '#eef5fb',
+        100: '#cde2f3',
+        200: '#8bbce4',
+        300: '#6aa9dc',
+        400: '#4996d4',
+        500: '#2f82c6',
+        600: '#276ca5',
+        700: '#1f5784',
+        800: '#1c4164',
+        900: '#0E273C',
       },
       green: {
         50: '#F5FAF7',
@@ -33,22 +34,22 @@ module.exports = {
       },
       orange: {
         50: '#FDF6F3',
-        100: '#FBEEE6',
-        200: '#F5D4C1',
-        300: '#EFB99C',
-        400: '#E28552',
+        100: '#FBBE9D',
+        200: '#FAA070',
+        300: '#F88344',
+        400: '#F76618',
         500: '#D65108',
-        600: '#C14907',
-        700: '#803105',
-        800: '#602404',
-        900: '#401802',
+        600: '#C04807',
+        700: '#A73F06',
+        800: '#A73F06',
+        900: '#762C04',
       },
       yellow: {
-        50: '#FEFAF3',
-        100: '#FDF6E7',
-        200: '#FBE7C2',
-        300: '#F9D99D',
-        400: '#F4BD54',
+        50: '#FFFBEB',
+        100: '#FEF3C7',
+        200: '#FDE68A',
+        300: '#FCD34D',
+        400: '#FBBF24',
         500: '#EFA00B',
         600: '#D7900A',
         700: '#8F6007',
@@ -97,6 +98,9 @@ module.exports = {
       minHeight: (theme) => ({
         '(screen-24)': `calc(100vh - ${theme('spacing.24')})`,
       }),
+      scale: {
+        full: '1000',
+      },
       width: {
         double: '200%',
       },
@@ -118,12 +122,21 @@ module.exports = {
       '8xl': '6rem',
     },
   },
+  darkMode: 'media',
   plugins: [
     require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
     plugin(({ addUtilities }) => {
       addUtilities({
         '.scroll-smoothly': {
           scrollBehavior: 'smooth',
+          '-webkitOverflowScrolling': 'touch',
+        },
+        '.snap-x-mandatory': {
+          scrollSnapType: 'x mandatory',
+        },
+        '.snap-align-start': {
+          scrollSnapAlign: 'start',
         },
       })
     }),

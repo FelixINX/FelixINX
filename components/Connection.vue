@@ -3,7 +3,8 @@
     :is="component"
     :href="to ? false : href"
     :to="to ? localePath(to) : false"
-    class="bg-blue-700 hover:bg-blue-300 text-white hover:text-blue-900 p-3 md:p-4 inline-block md:w-72 lg:w-80 xl:w-96 transition-colors space-y-2 group cursor-pointer"
+    class="text-white p-3 md:p-4 inline-block w-full md:w-72 lg:w-80 xl:w-96 transition-colors space-y-2 group cursor-pointer"
+    :class="[backgroundClass, `hover:${hoverClass} focus:${hoverClass}`]"
   >
     <span class="text-sm md:text-base">
       {{ selfConnectionText }}
@@ -13,7 +14,7 @@
     >
       <div
         v-if="icon"
-        class="w-6 md:w-8 h-6 md:h-8 text-blue-900 rounded-full inline-block transition-colors text-center text-base leading-6 md:leading-8"
+        class="w-6 md:w-8 h-6 md:h-8 text-blue-900 rounded-full inline-block transition-colors text-center text-sm md:text-base leading-6 md:leading-8"
         :class="[iconClass]"
       >
         <fa :icon="['far', icon]" />
@@ -53,6 +54,16 @@ export default {
       required: false,
       type: String,
       default: 'bg-yellow-500',
+    },
+    backgroundClass: {
+      required: false,
+      type: String,
+      default: 'bg-blue-800',
+    },
+    hoverClass: {
+      required: false,
+      type: String,
+      default: 'bg-blue-900',
     },
   },
   data: () => ({

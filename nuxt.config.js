@@ -4,12 +4,12 @@ import fr from './i18n/fr'
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
-  mode: 'universal',
+  modern: 'client',
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'felixinx.me',
-    titleTemplate: '%s | @felixinx',
+    titleTemplate: '%s | felixinx.me',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -20,7 +20,11 @@ export default {
       { rel: 'alternate icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.felixinx.me/basier_circle/stylesheet.css',
+        href: `${
+          process.env.NODE_ENV === 'development'
+            ? '/fonts'
+            : 'https://fonts.felixinx.me'
+        }/basier_circle/stylesheet.css`,
       },
     ],
   },
@@ -42,6 +46,7 @@ export default {
     '@nuxtjs/tailwindcss',
     // https://www.npmjs.com/package/@nuxtjs/fontawesome
     '@nuxtjs/fontawesome',
+    '@aceforth/nuxt-optimized-images',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -51,6 +56,7 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     'nuxt-i18n',
+    'nuxt-lazy-load',
   ],
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
@@ -85,6 +91,12 @@ export default {
         'faCode',
         'faGlobe',
         'faHome',
+        'faAtlas',
+        'faBus',
+        'faPenNib',
+        'faSubway',
+        'faDesktop',
+        'faQrcode',
       ],
     },
   },
@@ -96,6 +108,36 @@ export default {
     vueI18n: {
       fallbackLocale: 'en',
       messages: { en, fr },
+    },
+  },
+
+  // Tailwind module Configuration
+  tailwindCss: {
+    cssPath: '~/assets/css/tailwind.css',
+    configPath: 'tailwind.config.js',
+  },
+
+  // Misc config
+  loading: {
+    color: '#fff',
+    height: '5px',
+    failedColor: 'red',
+  },
+  loadingIndicator: {
+    name: 'circle',
+    color: '#fff',
+    background: '#0E273C',
+  },
+
+  // PWA module config
+  pwa: {
+    meta: {
+      theme_color: '#0D2336',
+    },
+    manifest: {
+      name: 'Félix Desjardins | felixinx.me',
+      short_name: 'felixinx.me',
+      description: 'Mon site perso / My personnal website',
     },
   },
 }

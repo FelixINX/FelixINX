@@ -1,8 +1,8 @@
 <template>
   <div>
-    <header class="bg-blue-500 h-24 w-full fixed top-0 z-20">
+    <header class="bg-blue-700 dark:bg-blue-900 h-24 w-full fixed top-0 z-20">
       <div
-        class="container h-full py-4 flex items-center justify-between bg-blue-500 text-white text-3xl space-x-4"
+        class="container h-full py-4 flex items-center justify-between text-white text-3xl space-x-4"
       >
         <div
           class="w-12 h-12 bg-gradient-to-bl from-green-400 to-green-600 rounded-full relative transform hover:scale-105 transition-transform group select-none"
@@ -26,26 +26,26 @@
         </div>
         <NuxtLink to="/" class="font-bold">@felixinx</NuxtLink>
         <div class="flex-grow"></div>
-        <button @click="menu = !menu">
-          <fa :icon="['far', 'bars']" class="ml-2" />
+        <button class="w-14 h-14 relative" @click="menu = !menu">
+          <fa :icon="['far', 'bars']" class="m-auto z-10 pointer-events-none" />
         </button>
       </div>
       <transition
-        enter-active-class="transition ease-out duration-200"
-        enter-class="opacity-0 translate-x-1"
-        enter-to-class="opacity-100 translate-x-0"
-        leave-active-class="transition ease-in duration-150"
-        leave-class="opacity-100 translate-x-0"
-        leave-to-class="opacity-0 translate-x-1"
+        enter-active-class="transition ease-in duration-500"
+        enter-class="opacity-0 bg-blue-600"
+        enter-to-class="opacity-100"
+        leave-active-class="transition ease-out duration-150"
+        leave-class="opacity-100"
+        leave-to-class="opacity-0 bg-blue-600"
       >
         <div
           v-show="menu"
-          class="fixed top-0 left-0 h-screen w-full z-50 bg-blue-500 text-white pt-12 px-12 space-y-12"
+          class="fixed top-0 left-0 h-screen w-full z-50 bg-blue-700 text-white pt-12 px-12 space-y-12"
         >
           <h1 class="text-2xl md:text-6xl font-black container">
             Félix Desjardins
             <button
-              class="float-right hover:text-blue-300"
+              class="float-right hover:text-blue-200"
               @click="menu = false"
             >
               <fa :icon="['far', 'times']" />
@@ -64,16 +64,16 @@
                 class="my-3 md:my-7 w-6 md:w-10 h-6 md:h-10 bg-orange-500 rounded-full relative"
               >
                 <div
-                  class="absolute w-4 md:w-6 h-4 md:h-6 rounded-full m-1 md:m-2 bg-white z-10 group-hover:bg-orange-200 transition-colors"
-                  :class="{ 'bg-orange-300': $nuxt.$route.path === item.href }"
+                  class="absolute w-4 md:w-6 h-4 md:h-6 rounded-full m-1 md:m-2 bg-white z-10 group-hover:bg-orange-100 transition-colors"
+                  :class="{ 'bg-orange-200': $nuxt.$route.path === item.href }"
                 ></div>
                 <div
                   class="w-2 md:w-4 h-12 md:h-24 bg-orange-500 absolute -top-3 md:-top-7 left-2 md:left-3"
                 ></div>
               </div>
               <h2
-                class="flex-grow group-hover:text-orange-200 transition-colors"
-                :class="{ 'text-orange-300': $nuxt.$route.path === item.href }"
+                class="flex-grow group-hover:text-orange-100 transition-colors"
+                :class="{ 'text-orange-200': $nuxt.$route.path === item.href }"
               >
                 {{ $t(`menu.${item.title}`) }}
                 <fa class="ml-4" :icon="['far', item.icon]" />
@@ -83,7 +83,7 @@
           <div class="space-y-4 md:space-y-0 md:space-x-8 container">
             <nuxt-link
               :to="switchLocalePath($i18n.locale === 'fr' ? 'en' : 'fr')"
-              class="bg-blue-700 hover:bg-blue-300 text-white hover:text-blue-900 p-3 md:p-4 block md:inline-block md:w-72 lg:w-80 lg:w-96 group transition-colors space-y-2"
+              class="bg-blue-800 hover:bg-blue-900 focus:bg-blue-900 text-white p-3 md:p-4 block md:inline-block md:w-72 lg:w-80 lg:w-96 group transition-colors space-y-2"
             >
               <span class="text-sm md:text-base">Connection</span>
               <h2
@@ -118,12 +118,9 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import Connection from '~/components/Connection.vue'
-export default Vue.extend({
+<script>
+export default {
   name: 'DefaultLayout',
-  components: { Connection },
   data: () => ({
     menu: false,
     items: [
@@ -148,11 +145,15 @@ export default Vue.extend({
         icon: 'comment-alt-lines',
       },
     ],
+    motion: {
+      duration: 250,
+      instantRollback: false,
+    },
   }),
   head: {
     htmlAttrs: {
-      class: 'scroll-smoothly',
+      class: 'scroll-smoothly scrollbar scrollbar-blue',
     },
   },
-})
+}
 </script>
