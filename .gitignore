@@ -90,3 +90,6 @@ sw.*
 *.swp
 
 /static/fonts/*
+/static/fonts.zip
+/content/en/*
+/content/fr/*
