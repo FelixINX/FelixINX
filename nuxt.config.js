@@ -1,6 +1,12 @@
 import en from './i18n/en'
 import fr from './i18n/fr'
 
+const fontEndpoint = `${
+  process.env.NODE_ENV === 'development'
+    ? '/fonts'
+    : 'https://fonts.felixinx.me'
+}/basier_circle`
+
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -16,6 +22,24 @@ export default {
       { hid: 'description', name: 'description', content: '' },
     ],
     link: [
+      {
+        rel: 'preload',
+        href: `${fontEndpoint}/400.woff2`,
+        as: 'font',
+        type: 'font/woff2',
+      },
+      {
+        rel: 'preload',
+        href: `${fontEndpoint}/500.woff2`,
+        as: 'font',
+        type: 'font/woff2',
+      },
+      {
+        rel: 'preload',
+        href: `${fontEndpoint}/700.woff2`,
+        as: 'font',
+        type: 'font/woff2',
+      },
       { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
       { rel: 'alternate icon', href: '/favicon.ico' },
       {
@@ -63,9 +87,7 @@ export default {
   content: {},
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {
-    transpile: ['fontsource-assistant/latin.css'],
-  },
+  build: {},
 
   // Font Awesome module Configuration
   fontawesome: {
@@ -126,13 +148,13 @@ export default {
   loadingIndicator: {
     name: 'circle',
     color: '#fff',
-    background: '#0E273C',
+    background: '#1f5784    ',
   },
 
   // PWA module config
   pwa: {
     meta: {
-      theme_color: '#0D2336',
+      theme_color: '#1f5784',
     },
     manifest: {
       name: 'Félix Desjardins | felixinx.me',
