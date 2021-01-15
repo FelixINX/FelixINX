@@ -26,7 +26,11 @@
         </div>
         <NuxtLink to="/" class="font-bold">@felixinx</NuxtLink>
         <div class="flex-grow"></div>
-        <button class="w-14 h-14 relative" @click="menu = !menu">
+        <button
+          class="w-14 h-14 relative"
+          :aria-label="$t('menu.toggle')"
+          @click="menu = !menu"
+        >
           <fa :icon="['far', 'bars']" class="m-auto z-10 pointer-events-none" />
         </button>
       </div>

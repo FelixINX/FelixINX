@@ -47,40 +47,44 @@
           }}</NuxtLink
           >.
         </p>
-        <FeatureList>
+        <div class="space-y-4 md:space-y-8">
           <h2 class="text-2xl md:text-4xl font-bold">
             {{ $t('interests.title') }}
           </h2>
-          <FeatureListItem icon="desktop">
-            <h3 class="font-medium">{{ $t('interests.tech') }}</h3>
-            {{ $t('interests.techDesc') }}
-          </FeatureListItem>
-          <FeatureListItem icon="atlas">
-            <h3 class="font-medium">{{ $t('interests.tourism') }}</h3>
-            {{ $t('interests.tourismDesc') }}
-          </FeatureListItem>
-          <FeatureListItem icon="bus">
-            <h3 class="font-medium">{{ $t('interests.transports') }}</h3>
-            {{ $t('interests.transportsDesc') }}
-          </FeatureListItem>
-        </FeatureList>
-        <FeatureList>
+          <FeatureList>
+            <FeatureListItem icon="desktop">
+              <h3 class="font-medium">{{ $t('interests.tech') }}</h3>
+              {{ $t('interests.techDesc') }}
+            </FeatureListItem>
+            <FeatureListItem icon="atlas">
+              <h3 class="font-medium">{{ $t('interests.tourism') }}</h3>
+              {{ $t('interests.tourismDesc') }}
+            </FeatureListItem>
+            <FeatureListItem icon="bus">
+              <h3 class="font-medium">{{ $t('interests.transports') }}</h3>
+              {{ $t('interests.transportsDesc') }}
+            </FeatureListItem>
+          </FeatureList>
+        </div>
+        <div class="space-y-4 md:space-y-8">
           <h2 class="text-2xl md:text-4xl font-bold">
             {{ $t('strengths.title') }}
           </h2>
-          <FeatureListItem icon="pen-nib">
-            <h3 class="font-medium">{{ $t('strengths.graph') }}</h3>
-            {{ $t('strengths.graphDesc') }}
-          </FeatureListItem>
-          <FeatureListItem icon="subway">
-            <h3 class="font-medium">{{ $t('strengths.gtfs') }}</h3>
-            {{ $t('strengths.gtfsDesc') }}
-          </FeatureListItem>
-          <FeatureListItem icon="code">
-            <h3 class="font-medium">{{ $t('strengths.code') }}</h3>
-            {{ $t('strengths.codeDesc') }}
-          </FeatureListItem>
-        </FeatureList>
+          <FeatureList>
+            <FeatureListItem icon="pen-nib">
+              <h3 class="font-medium">{{ $t('strengths.graph') }}</h3>
+              {{ $t('strengths.graphDesc') }}
+            </FeatureListItem>
+            <FeatureListItem icon="subway">
+              <h3 class="font-medium">{{ $t('strengths.gtfs') }}</h3>
+              {{ $t('strengths.gtfsDesc') }}
+            </FeatureListItem>
+            <FeatureListItem icon="code">
+              <h3 class="font-medium">{{ $t('strengths.code') }}</h3>
+              {{ $t('strengths.codeDesc') }}
+            </FeatureListItem>
+          </FeatureList>
+        </div>
       </div>
     </div>
     <div

@@ -7,6 +7,7 @@ export default {
     switchLocale: 'Ligne francophone',
     sourceCode: 'Source code',
     connectionReverse: 'Correspondance',
+    toggle: 'Toggle menu',
   },
   connection: {
     heading: 'Connection',
