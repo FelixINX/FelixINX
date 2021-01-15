@@ -10,7 +10,7 @@
     </div>
     <div
       class="h-56 md:h-72 xl-h-96 bg-cover bg-center bg-fixed"
-      :lazy-background="`/img/blog/${page.header}`"
+      :lazy-background="require(`~/static/img/blog/${page.header}`)"
     ></div>
     <div class="bg-orange-50 text-orange-900 py-4 md:py-8">
       <Nuxt-Content

@@ -140,4 +140,8 @@ export default {
       description: 'Mon site perso / My personnal website',
     },
   },
+  // Optimized images config
+  optimizedImages: {
+    optimizeImages: true,
+  },
 }

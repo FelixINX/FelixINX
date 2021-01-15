@@ -2,7 +2,7 @@
   <div>
     <div
       class="h-56 xl:h-96 bg-cover bg-center"
-      lazy-background="/img/background-via.jpg"
+      :lazy-background="require('~/static/img/background-via.jpg')"
     ></div>
     <div class="bg-yellow-500 py-4 md:py-8 space-y-4">
       <h1 class="text-3xl md:text-6xl container font-bold">

@@ -2,7 +2,7 @@
   <div>
     <div
       class="h-56 xl:h-96 bg-cover bg-center"
-      lazy-background="/img/background-jasper.jpg"
+      :lazy-background="require('~/static/img/background-jasper.jpg')"
     ></div>
     <div class="bg-orange-500 text-white py-4 md:py-8 space-y-4">
       <h1 class="text-3xl md:text-6xl container font-bold">
@@ -19,7 +19,7 @@
         class="container flex items-start gap-x-8"
       >
         <div
-          :lazy-background="`/img/blog/${post.header}`"
+          :lazy-background="require(`~/static/img/blog/${post.header}`)"
           class="w-1/4 h-40 min-h-full bg-center bg-cover rounded-xl shadow-xl"
         />
         <div class="space-y-4 flex-1">

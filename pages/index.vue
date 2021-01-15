@@ -3,7 +3,7 @@
     <div
       ref="first"
       class="min-h-screen pt-24 flex items-start relative overflow-hidden bg-center bg-cover text-blue-900"
-      lazy-background="/img/background-bib.jpg"
+      :lazy-background="require('~/static/img/background-bib.jpg')"
     >
       <div
         class="absolute -left-4 md:left-0 -top-4 md:top-0 bg-green-200 bg-opacity-80 w-double md:w-3/4 h-4/5 md:h-full transform rotate-3 md:rotate-0 animate-appear-right"
@@ -292,7 +292,7 @@
     </div>
     <div
       class="w-full h-48 md:h-96 bg-cover bg-center"
-      lazy-background="/img/background-dm.jpg"
+      :lazy-background="require('~/static/img/background-dm.jpg')"
     ></div>
     <Footer>
       <Connection
